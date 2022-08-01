@@ -1,9 +1,7 @@
 package com.example.herokudemospringboot;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,10 @@ public class TestController {
                 .text("Hello" + count).build();
         messageRepo.save(m);
         return messageRepo.findAll();
+    }
+
+    @PostMapping
+    public Message newMessage(@RequestBody Message message){
+        return messageRepo.save(message);
     }
 }
