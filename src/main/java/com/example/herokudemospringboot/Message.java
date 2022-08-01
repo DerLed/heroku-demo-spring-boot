@@ -1,6 +1,7 @@
 package com.example.herokudemospringboot;
 
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.annotation.PostConstruct;
@@ -23,13 +24,7 @@ public class Message {
 
     private String text;
 
-
+    @CreatedDate
     private LocalDateTime createTime;
 
-    @PrePersist
-    private void create(){
-        if(createTime == null) {
-            this.createTime = LocalDateTime.now();
-        }
-    }
 }
