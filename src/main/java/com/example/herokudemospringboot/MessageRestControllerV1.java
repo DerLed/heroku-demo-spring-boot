@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/v1/message")
 @RequiredArgsConstructor
-public class TestController {
+public class MessageRestControllerV1 {
 
     private final MessageRepo messageRepo;
 
