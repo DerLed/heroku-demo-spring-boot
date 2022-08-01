@@ -29,10 +29,10 @@
     <h1>Страница обложки</h1>
     <p class="lead">Обложка - это одностраничный шаблон для создания простых и красивых домашних страниц. Загрузите, отредактируйте текст и добавьте свою собственную полноэкранную фоновую фотографию, чтобы сделать ее своей собственной.</p>
     <div th:each="m : ${messages}">
-<!--        <p th:text="${m.getText()}">-->
-        gfghjfgjh
+      <p th:text="${m.id}"></p>
+        <p th:text="${m.text}"></p>
   </div>
-    </p>
+
     <p class="lead">
       <a href="#" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">Подробнее</a>
     </p>
