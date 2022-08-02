@@ -26,6 +26,7 @@
             </nav>
         </div>
     </header>
+</div>
 
     <main class="px-3">
         <h1>Страница обложки</h1>
@@ -39,9 +40,13 @@
                 <div class="card text-bg-secondary mb-3 h-100">
                     <div class="card-body">
                         <h5 class="card-title" th:text="${m.id}">Card title</h5>
-                        <p class="card-text" th:text="${m.text}">This is a longer card with supporting text below as a
-                            natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text" th:text="${m.text}"></p>
                     </div>
+
+                    <form method="post" action="#" th:action="@{/message/del/{id}(id=${m.id})}">
+                        <button type="submit" class="btn btn-primary">Удалить</button>
+                    </form>
+
                 </div>
             </div>
 
@@ -58,6 +63,6 @@
                 href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
     </footer>
 
-</div>
+
 </body>
 </html>
