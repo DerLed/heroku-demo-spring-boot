@@ -13,26 +13,14 @@
     <!-- Bootstrap core CSS -->
 
 </head>
+<form method="post" action="#" th:action="@{/test}">
+    <button type="submit" class="btn btn-primary">Тест</button>
+</form>
 
 <body class="d-flex h-100 text-center text-white bg-dark">
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="mb-auto">
-        <div>
-            <h3 class="float-md-left mb-0">Обложка</h3>
-            <nav class="nav nav-masthead justify-content-center float-md-right">
-                <a class="nav-link active" aria-current="page" href="#">Главная</a>
-                <a class="nav-link" href="#">Особенности</a>
-                <a class="nav-link" href="#">Контакты</a>
-            </nav>
-        </div>
-    </header>
-</div>
 
     <main class="px-3">
-        <h1>Страница обложки</h1>
-        <p class="lead">Обложка - это одностраничный шаблон для создания простых и красивых домашних страниц. Загрузите,
-            отредактируйте текст и добавьте свою собственную полноэкранную фоновую фотографию, чтобы сделать ее своей
-            собственной.</p>
 
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -41,6 +29,7 @@
                     <div class="card-body">
                         <h5 class="card-title" th:text="${m.id}">Card title</h5>
                         <p class="card-text" th:text="${m.text}"></p>
+                        <small th:text="${m.createTime}"></small>
                     </div>
 
                     <form method="post" action="#" th:action="@{/message/del/{id}(id=${m.id})}">
@@ -52,16 +41,8 @@
 
         </div>
 
-
-        <p class="lead">
-            <a href="#" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">Подробнее</a>
-        </p>
     </main>
-
-    <footer class="mt-auto text-white-50">
-        <p>Шаблон обложки для <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, от <a
-                href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-    </footer>
+</div>
 
 
 </body>
