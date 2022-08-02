@@ -24,6 +24,6 @@ public class MvcController {
     @PostMapping("/message/del/{id}")
     public String delete(@PathVariable Long id, Model model){
         messageRepo.deleteById(id);
-        return "redirect:/index";
+        return "redirect:/";
     }
 }
