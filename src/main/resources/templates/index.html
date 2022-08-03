@@ -29,7 +29,8 @@
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
             <form method="post" action="#" th:action="@{/message}">
                 <label for="message">Сообщение</label>
-                <input name="message" type="text" id="message" placeholder="Введите сообщение">
+<!--                <input name="message" type="text" id="message" placeholder="Введите сообщение">-->
+                <textarea name="message" class="form-control" id="message" rows="3"></textarea>
                 <button type="submit" class="btn btn-primary">Отправить</button>
             </form>
         </div>
