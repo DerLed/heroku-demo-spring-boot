@@ -59,46 +59,7 @@ public class MvcController {
     @PostMapping("test")
     public String test(Model model) throws Exception {
 
-        String URL = "https://cbr.ru/scripts/XML_daily.asp";
 
-        List<Valute> valCurs = new ArrayList<>();
-
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.parse(URL);
-
-        doc.getDocumentElement().normalize();
-
-
-        NodeList nodeList =  doc.getElementsByTagName("Valute");
-
-        DecimalFormatSymbols symbols = new DecimalFormatSymbols();
-        symbols.setDecimalSeparator(',');
-        String pattern = "###000";
-        DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
-        decimalFormat.setParseBigDecimal(true);
-
-        for (int i = 0; i < nodeList.getLength(); i++){
-            System.out.println(nodeList.item(i).getTextContent());
-
-            Node node = nodeList.item(i);
-
-            if(node.getNodeType() == Node.ELEMENT_NODE) {
-                Element elem = (Element) node;
-
-                Valute valute = new Valute(
-                        elem.getElementsByTagName("NumCode").item(0).getTextContent(),
-                        elem.getElementsByTagName("CharCode").item(0).getTextContent(),
-                        Integer.parseInt(elem.getElementsByTagName("Nominal").item(0).getTextContent()),
-                        elem.getElementsByTagName("Name").item(0).getTextContent(),
-                        (BigDecimal) decimalFormat.parse(elem.getElementsByTagName("Value").item(0).getTextContent())
-                );
-
-                valCurs.add(valute);
-            }
-        }
-
-        valCurs.forEach(System.out::println);
 
         return "redirect:/";
     }
