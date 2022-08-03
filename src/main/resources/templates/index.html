@@ -13,21 +13,36 @@
     <!-- Bootstrap core CSS -->
 
 </head>
-<form method="post" action="#" th:action="@{/test}">
-    <button type="submit" class="btn btn-primary">Тест</button>
-</form>
+
 
 <body class="d-flex h-100 text-center text-white bg-dark">
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+
+<!--<form method="post" action="#" th:action="@{/test}">-->
+<!--    <button type="submit" class="btn btn-primary">Тест</button>-->
+<!--</form>-->
+
+
+
 
     <main class="px-3">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <form method="post" action="#" th:action="@{/message}">
+                <label for="message">Сообщение</label>
+                <input name="message" type="text" id="message" placeholder="Введите сообщение">
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </div>
 
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col" th:each="m : ${messages}">
                 <div class="card text-bg-secondary mb-3 h-100">
                     <div class="card-body">
-                        <h5 class="card-title" th:text="${m.id}">Card title</h5>
+                        <div class="card-header py-3">
+                            <h5 class="card-title" th:text="${m.id}">Card title</h5>
+                        </div>
                         <p class="card-text" th:text="${m.text}"></p>
                         <small th:text="${m.createTime}"></small>
                     </div>
@@ -40,9 +55,9 @@
             </div>
 
         </div>
-
+        </div>
     </main>
-</div>
+
 
 
 </body>

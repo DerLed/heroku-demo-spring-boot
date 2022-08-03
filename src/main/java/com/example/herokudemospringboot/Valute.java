@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class Valute {
     private String numCode;
     private String charCode;
-    private BigDecimal nominal;
+    private Integer nominal;
     private String name;
     private BigDecimal value;
 }
